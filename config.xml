@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="camBeepApp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>CamBeep</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+
+    <!-- Define app icon for each platform. -->
+    <icon src="icon.jpg" />
+    <icon src="res/icon/icon.jpg"   gap:platform="android"    gap:qualifier="ldpi" />
+    <icon src="res/icon/icon.jpg"  gap:platform="android"    gap:qualifier="mdpi" />
+    <icon src="res/icon/icon.jpg"  gap:platform="android"    gap:qualifier="hdpi" />
+    <icon src="res/icon/icon.jpg"  gap:platform="android"    gap:qualifier="xhdpi" />
+    <icon src="res/icon/icon.jpg"           gap:platform="ios"        width="57" height="57" />
+    <icon src="res/icon/icon.jpg"           gap:platform="ios"        width="72" height="72" />
+    <icon src="res/icon/icon.jpg"         gap:platform="ios"        width="114" height="114" />
+    <icon src="res/icon/icon.jpg"         gap:platform="ios"        width="144" height="144" />
+    <icon src="res/icon/icon.jpg"         gap:platform="webos" />
+    <icon src="res/icon/icon.jpg"  gap:platform="winphone" />
+    <icon src="res/icon/icon.jpg" gap:platform="winphone"   gap:role="background" />
+
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>
