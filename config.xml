@@ -4,10 +4,10 @@
     <description>
         An application to send and receive notifications on inventory movement promptly.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
+    <author email="leebhebhe002@gmail.com" href="lindabhebheblog@wordpress.com">
         Apache Cordova Team
     </author>
-    <content src="View/www/generalViews/index.html" />
+    <content src="index.html" />
 
     <access origin="*" />
     <allow-intent href="http://*/*" />
