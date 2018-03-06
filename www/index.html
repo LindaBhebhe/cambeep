@@ -23,6 +23,7 @@
   </head>
 
   <body>
+    <script type="text/javascript" src="../Controller/controlScript.js"></script> 
 
     <h1 class="site-heading text-center text-white d-none d-lg-block">
       <span class="site-heading-upper text-primary mb-3">Camfed Equipment Request System </span>
@@ -31,45 +32,41 @@
 
     <section class="page-section cta">
       <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <div class="cta-inner text-center rounded">
+       <div class="row">
+           <div class="col-xl-9 mx-auto">
+             <!--<div class="cta-inner text-center rounded"> -->
+              <div style=" text-align: center;" id= "form">
               <h2 class="section-heading mb-4">
                 <span class="section-heading-upper">Login</span>
                </h2>
        
-             <!--  <form action="home.html">
-             <input type="text" name="firstname" placeholder="username"><br><br>
-             <input type="text" name="lastname" placeholder="password"><br><br>
-             <input type="submit" value="Submit">
-             </form> 
- -->
-            <div class="container">  
-             <form id="contact" action="home.html" method="get">
+             
+             <form id="login" action="" method="post">
               
-      <fieldset>
-        <input placeholder="Username" name="uname" id="unme" type="text" tabindex="1" required>
-          <span style="color:red" class="error" id="usererror">
-      </fieldset>
-      <br>
-      <fieldset>
-        <input placeholder="Password" name="pwd" id="passwd" type="password" tabindex="2" required>
-          <span style="color:red" class="error" id="passerror">    
-      </fieldset>
-      <br>
-      
-      <fieldset>
-        <button name="login" type="submit" id="loginSubmit" onclick="home.html" data-submit="...Sending">Submit</button>
-      </fieldset>
-      <a href="passwordIssue.php" style="text-align:center">Forgot Password?</a>
-     </form><br>
-     </div>
-      <script type="text/javascript" src="../js/myscript.js"></script>  
+              <fieldset> 
+                <input  name="uname" id="username" type="text" tabindex="1" placeholder="Username" required>
+                 <span style="color:red" class="error" id="usererror"> 
+              </fieldset>
+              <br>
 
+              <fieldset>
+                <input  name="pwd" id="password" type="password" tabindex="2" placeholder="Password" required>
+                <span style="color:red" class="error" id="passerror">    
+              </fieldset>
+              <br>
+              
+              <fieldset>
+                <button name="login" type="submit" id="loginSubmit" onclick="loginAsUser()" >Submit</button>
+              </fieldset>
+
+              <a href="passwordIssue.php" style="text-align:center">Forgot Password?</a>
+             </form><br>
+     
+              </div>
             </div>
+         </div>
           </div>
-        </div>
-      </div>
+      <!-- </div> -->
     </section>
 
     <footer class="footer text-faded text-center py-5">
