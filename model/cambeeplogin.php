@@ -21,21 +21,21 @@ if(isset($_REQUEST['username'])){
             $row =mysqli_fetch_assoc($result);
             $username=$row['username'];
             $passwd = $row['password'];
-            #$role = $row['role'];
+            $role = $row['role'];
 
             if($username){
-            /*if(password_verify($password, $passwd)){ 
+            //if(password_verify($password, $passwd)){ 
            
-                if($role.IT Admin){
+                if(strcmp($role, 'IT Admin')==0){
                     echo "successful1";
                 }
-                elseif ($role == NO Staff) {
+                elseif (strcmp($role, 'NO Staff')==0){
                     echo "successful2";
                 }
-                elseif ($role == Admin ) {
+                elseif (strcmp($role, 'Admin')==0 ){
                     echo "successful3";
-                }*/
-                echo "successful2";
+                }
+               # echo "successful2";
                 session_start();
                 $_SESSION['username']= $row['username'];
                 $_SESSION['password']=  $row['password'];  
