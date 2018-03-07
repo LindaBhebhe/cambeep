@@ -23,11 +23,8 @@
   </head>
 
   <body>
-    <?php
 
-    require_once("../model/supportFunctions.php");              
-
-    ?>
+    <script type="text/javascript" src="../Controller/controlScript.js"></script>  
 
     <h1 class="site-heading text-center text-white d-none d-lg-block">
       <span class="site-heading-upper text-primary mb-3">Camfed Equipment Request System </span>
@@ -78,35 +75,41 @@
 
                <form id="login" action="" method="post">      
               <fieldset> 
-                Enter your message: <br>
-                <textarea rows="4" cols="50"  name="msg" id="message" placeholder="Enter your message " required>  
+                 
+                Enter your message: <br> 
+                <span style="color:red" class="error" id="message_error"> 
+                <textarea rows="4" cols="50"  name="msg" id="message" placeholder="Enter your message " required> 
+
                  </textarea>
               </fieldset>
               <br>
 
               
 
-              <fieldset>
+              <!-- <fieldset>
                Request by: <br>
+                 <span style="color:red" class="error" id="request_error">  
                 <input  name="requester" id="requestBy" type="text" tabindex="2"  required>
-                <span style="color:red" class="error" id="requesterError">    
+                
               </fieldset>
-              <br>
+              <br> -->
 
               <fieldset>
+             
                How urgent?: <br>
-                <select name="status" id="request_status"  tabindex="2"  required>
+                  <span style="color:red" class="error" id="status_error">  
+                <select name="status" id="status" placeholder="select "  tabindex="2"  required>
                 <option value="veryUrgent">Very urgent</option>
                 <option value="urgent">Urgent</option>
                 <option value="notUrgent">Not urgent</option>
                 </select>
 
-                <span style="color:red" class="error" id="requesterError">    
+               
               </fieldset>
               <br>
               
               <fieldset>
-                <button name="login" type="submit" id="loginSubmit" onclick="support_requests()" >Send</button>
+                <button name="support" type="submit" id="formSubmit" onclick= "return validateSupportForm()" data-submit="...Sending">Send</button>
               </fieldset>
 
              </form><br>

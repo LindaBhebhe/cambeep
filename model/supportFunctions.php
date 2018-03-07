@@ -152,24 +152,7 @@ mysqli_close($con);
 }
 }
 
-//Insert all support requests 
-function support_requests(){
-    echo "in the insert function";
-    $con = getdb();
-    $requester = SESSION[username];
-    $date  = date('Y/m/d H:i:s');
-    $message = REQUEST['message'];
-    $status = REQUEST['status'];
 
-    $Sql = "INSERT INTO `support`(date, requester, message, status) VALUES ('$date','$requester','$message','$status')";
-    $result = mysqli_query($con, $Sql);  
-
-   
-    if (mysqli_num_rows($result)>0 ) {
-      echo "succesffully inserted";
-    }
-
-}
 
 
 ?>

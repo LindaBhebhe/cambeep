@@ -32,7 +32,7 @@ if(isset($_REQUEST['username'])){
                 elseif (strcmp($role, 'NO Staff')==0){
                     echo "successful2";
                 }
-                elseif (strcmp($role, 'Admin')==0 ){
+                elseif (strcmp($role, 'Admin')==0){
                     echo "successful3";
                 }
                # echo "successful2";
