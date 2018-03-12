@@ -92,9 +92,9 @@
                How urgent?: <br>
                   <span style="color:red" class="error" id="status_error">  
                 <select name="status" id="status" placeholder="select "  tabindex="2"  required>
-                <option value="veryUrgent">Very urgent</option>
-                <option value="urgent">Urgent</option>
-                <option value="notUrgent">Not urgent</option>
+                <option value="Very urgent">Very urgent</option>
+                <option value="Urgent">Urgent</option>
+                <option value="Not Urgent">Not urgent</option>
                 </select>
 
                

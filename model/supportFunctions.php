@@ -1,6 +1,7 @@
+<script type="text/javascript" src="../Controller/controlScript.js"></script> 
 <?php
 header("Access-Control-Allow-Origin: *");
-
+ 
 
 //CONNECTING TO THE DATABASE
 function getdb(){
@@ -39,10 +40,10 @@ catch(exception $e)
 
 
 // Function to get the IT support reports 
-function get_all_reports(){
+function get_all_requests(){
   
     $con = getdb();
-    $Sql = "SELECT * FROM support";
+    $Sql = "SELECT * FROM user_support";
     $result = mysqli_query($con, $Sql);  
 
    
@@ -55,26 +56,33 @@ function get_all_reports(){
                           <th>Requester</th>
                           <th>Message</th>
                           <th>Status</th>
+                          <th>State</th>
                           <th>Viewed</th>
                           <th>Respond</th>
                         </tr></thead><tbody>";
     
  
-           echo "<tbody>";  
-      while($row = mysqli_fetch_assoc($result)){   
-       echo "<tr>
+           echo "<tbody>"; 
+           $row_id = 0; 
+      while($row = mysqli_fetch_assoc($result)){ 
+         $row_id =  $row_id+1;
+       echo "<tr id= $row_id >
              <td>" . $row['date'] .
-             "</td><td>" . $row['requester'] .
+             "</td><td>" . $row['sender'] .
              "</td><td>" . $row['message'] .
               "</td><td>" . $row['status']. 
+              "</td><td>" . $row['state']. 
               "</td>
-              <td>"
+              <td>";
+        echo'
+              <form name="view" method="GET" action = "clearTable.php">
+               <button name="done" type="submit" id="$row_id" onclick="removeRow(id)">Done</button> 
+               </form>';
+
               ?>
-
-              <form name="view" method="GET" action = "viewedUpdate.php">
-               <button name="done" type="submit" id="doneBtn" onclick="done()">Done</button> 
-               </form>
-
+               
+              <script type="text/javascript" src="../Controller/controlScript.js"></script> 
+              
                <?php  
                  echo "</td>";
                  echo "<td>";
@@ -96,6 +104,14 @@ mysqli_close($con);
      echo "you have no records";
 }
 }
+
+/*function done($id){
+  echo("in the done function");
+  var hide_row = document.getElementById($id).style;
+      result_style.display = '';
+  <tr id=$id style="display: none;">
+
+}*/
 
 
 // Function to view all the stationery requests
@@ -163,10 +179,7 @@ mysqli_close($con);
 }
 }
 
-function done(){
 
-
-}
 
 
 

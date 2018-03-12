@@ -1,4 +1,13 @@
 
+function removeRow($id){
+ alert("in the clear function");
+ alert($id);
+  //var hide_row = document.getElementById(1).style;
+   //hide_row.display = '';
+
+}
+
+
 //*****************************login**************************
 //function to validate the login
 function validateloginjs(){
@@ -248,7 +257,7 @@ function requestEquipment(){
 			xhttp.onreadystatechange = function() {
                  console.log("in the on readyState");
 				if (this.readyState == 4 && this.status == 200) {				
-					if (this.responseText == "successful1"){
+					if (this.responseText == "successful"){
 						alert("successfully requested");
                         //window.location.href = "ITadminHome.html";
                      }
@@ -318,9 +327,9 @@ function requestStationery(){
 			xhttp.onreadystatechange = function() {
                  console.log("in the on readyState");
 				if (this.readyState == 4 && this.status == 200) {				
-					if (this.responseText == "successful1"){
-						alert("successfully requested");
-                        //window.location.href = "ITadminHome.html";
+					if (this.responseText == "successful"){
+						alert("Request Successful");
+                        window.location.href = "login.php";
                      }
                     
                 }
@@ -332,3 +341,8 @@ function requestStationery(){
 		  xhttp.open("GET", "http://localhost:81/cambeep/model/getStationery.php?item="+item+"&quantity="+quantity, true);		  
 		  xhttp.send();
 		}
+		//**************************************************************************************************
+
+
+		//*********************************************Other functions*************************************
+		

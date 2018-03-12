@@ -18,23 +18,23 @@ if(isset($_REQUEST['message'])){
     $status = $_REQUEST['status'];
 
 
-    $sql1 = "INSERT INTO user_support(sender) VALUES ('$requester')";
-    $result1 =mysqli_query($con, $sql1);
+    #$sql1 = "INSERT INTO user_support(sender) VALUES ('$requester')";
+    #$result1 =mysqli_query($con, $sql1);
 
-    $sql2 = "SELECT id from user_support WHERE sender = '$requester'";
-    $result2 = mysqli_query($con, $sql2);
+    #$sql2 = "SELECT id from user_support WHERE sender = '$requester'";
+    #$result2 = mysqli_query($con, $sql2);
 
 
-    if($result2){
-        echo "in the result2";
-          $row = mysqli_fetch_assoc($result2);
-          $service_id = $row['id'];
-          echo "$service_id";
+    #if($result2){
+       # echo "in the result2";
+          #$row = mysqli_fetch_assoc($result2);
+          #$service_id = $row['id'];
+          #echo "$service_id";
           $state ="pending";
 
 
      
-     $Sql = "INSERT INTO user_it_service(service_id, message, status, state) VALUES ('$service_id','$message','$status','$state')";
+     $Sql = "INSERT INTO user_support(date,sender, message, status, state) VALUES ('$date','$requester','$message','$status','$state')";
     $result = mysqli_query($con, $Sql);  
 
    
@@ -43,7 +43,7 @@ if(isset($_REQUEST['message'])){
       echo "successful";
      }
     }
-   }
+  # }
   }
 
  ?>

@@ -54,7 +54,7 @@
                     </thead> -->
                 <?php
                     Require('../model/supportFunctions.php');
-                       get_all_reports();
+                       get_all_requests();
                     
                   ?>
                 <!-- </table>

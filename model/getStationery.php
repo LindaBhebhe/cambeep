@@ -9,31 +9,36 @@ if(isset($_REQUEST['item'])){
 
    $con= mysqli_connect("localhost","root","","cambeep");
 
-
     if($con){ 
-    echo("CONNECTED") ;
+   
    // session_start();
    // $user = $_SESSION['username'];
     $user = "Bhebhe";
     $date  = date('Y/m/d H:i:s');
     $item = $_REQUEST['item'];
     $quantity = $_REQUEST['quantity'];
-    $returnDate = $_REQUEST['returnDate'];
-    $collectionDate = $_REQUEST['collectionDate'];
-    $item_id = 1;
     $status ="pending";
+   
 
+    $sql2 = "SELECT * FROM stationery WHERE item_name LIKE '%$item%'";
+    //$sql2 = "SELECT * FROM stationery";
+    $result2 = mysqli_query($con, $sql2);
 
-    INSERT INTO stationery_out(item_id, request_date, equip_id, quantity, request_by, approved_by, collection_by) VALUES (,'$date',[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
-    $sql = "INSERT INTO borrowed_equipment (item_id,borrowed_by,request_date,collection_date, return_date,status)  values('$item_id','$user','$date','$collectionDate','$returnDate','$status')";
+    if($result2){
 
-    $result = mysqli_query($con, $sql); 
-    echo("BEFORE IF");
+          $row = mysqli_fetch_assoc($result2);
+          $item_id = $row['id'];
+         
+
+      $sql = "INSERT INTO stationery_out(item_id, request_date, quantity, request_by, collection_by) VALUES ('$item_id','$date','$quantity','$user','$user')";
+      $result = mysqli_query($con, $sql);  
+
 
     if($result){
-      echo "successful";
+      return "successful";
     }
    }
+  }
  }
  ?>
 
