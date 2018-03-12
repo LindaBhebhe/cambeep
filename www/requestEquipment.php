@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -21,14 +23,10 @@
   </head>
 
   <body>
-     <?php
-      require_once('../model/getStationery.php');                  
-    ?>
-
-    <script type="text/javascript" src="../Controller/controlScript.js"></script>  
+    <script type="text/javascript" src="http://services.iperfect.net/js/IP_generalLib.js"></script>
 
     <h1 class="site-heading text-center text-white d-none d-lg-block">
-      <span class="site-heading-upper text-primary mb-3">Request Stationery</span>
+      <span class="site-heading-upper text-primary mb-3">Request Equipment</span>
     </h1>
 
     
@@ -60,37 +58,40 @@
                     
                   ?>
                <div style="text-align: center">
-               <form name="requestStationery" method="POST" action = "">
+               <form name="requestStationery" method="GET" action = "">
 
                Select the item to request for:<br>
                <select name="item" id="item"  tabindex="2"  required>
-                
-                <option value="File A4">File A4</option>
-                <option value="Catridge 72A">Catridge 72A</option>
-                <option value="A4 Khakhi envelopes">A4 Khakhi envelopes</option>
-                <option value="Acknowledgement sheets">Acknowledgement sheets</option>
-                <option value="Note books">Note books</option>
+              <!--  <?php
+                 //echo "calling the method";
+                 //Require('../model/supportFunctions.php');
+                 loadEquipment();
+                ?> -->
+                <option value="huawei">File A4</option>
+                <option value="Samsung S8">Samsung S8</option>
+                <option value="Nokia">Nokia</option>
+    
                 </select><br><br>
 
                 Quantity:<br>
                <input  name="quantity" id="quantity" type="text" tabindex="1"  required><br><br><br>
 
-                <!-- To be approved by:<br>
-                <select name="item" id="item"  tabindex="2"  required>
+                Collect on :<br>
+                <input type="text" name="date1" id="date1" alt="date" class="IP_calendar" title="d/m/Y">
+
+                Return on :<br>
+                <input type="text" name="date1" id="date1" alt="date" class="IP_calendar" title="d/m/Y">
+                <!-- <select name="item" id="item"  tabindex="2"  required>
                 <option value="bope">S Bope</option>
                 <option value="mangoma">P Mangoma</option>
                 <option value="Jamu">P Jamu</option>
                 <option value="mabaya">J Mabaya</option>
                 </select><br><br> -->
 
-               <button name="search" type="submit" id="submit" onclick="return validateStationeryForm()" >Send</button> 
+
+               <button name="search" type="submit" id="searchBtn" onclick="searchResults()" >Send</button> 
                </form>
                </div>
-
-
-
-           
-           
             </div>
           </div>
           </div>

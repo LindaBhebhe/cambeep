@@ -38,21 +38,27 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item active px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="index.html">Home
+              <a class="nav-link text-uppercase text-expanded" href="adminHome.php">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="stationery.html">Request Stationery</a>
+              <a class="nav-link text-uppercase text-expanded" href="requestStationery.php">Request Stationery</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="ITequipment.html">Request IT Equipment</a>
+              <a class="nav-link text-uppercase text-expanded" href="requestEquipment.php">Request IT Equipment</a>
             </li>
              <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="ITsupport.html">Request IT Support</a>
+              <a class="nav-link text-uppercase text-expanded" href="requestSupport.php">Request IT Support</a>
+            </li>
+             <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="stationeryRequests.php">Stationery Requests</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="index.html">Logout</a>
+              <a class="nav-link text-uppercase text-expanded" href="some page">System check</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="login.html">Logout</a>
             </li>
           </ul>
         </div>
@@ -67,13 +73,30 @@
           <div class="col-xl-9 mx-auto">
             <div class="cta-inner text-center rounded">
               <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Search and request for stationery below</span>
-                
+                <span  style="text-decoration-color: red" class="section-heading-upper">Need help on the application? </span>   
               </h2>
-              <div>
-               request form here 
-              </div>
+              <p class="mb-0"> Watch this video</p>
+              <video width="500" height="300" controls>
+           <source src="img/appVideo.mp4" type="video/mp4">
+     <!--       <source src="/assets_tutorials/media/Shaun-the-Sheep-The-Movie-Official-Trailer.ogg" type="video/ogg"> -->
+           Your browser does not support the video tag.
+           </video>
+              <p class="mb-0">Or listen to this audio </p>
+              
+               <!--  put some boarders here to clearly show the audio -->
+              <audio controls>
+       <source src="img/appAudio.mp3" type="audio/mpeg">
+    <!--    <source src="/assets_tutorials/media/Loreena_Mckennitt_Snow_56bit.ogg" type="audio/ogg"> -->
+       Your browser does not support the audio tag.
+       </audio><br>
+     
+             
             </div>
+           <!-- trying the email thing
+           <form method="post" action="mailto:linda.bhebhe@ashesi.edu.gh?subject=Testing app &message= so the email actually came">
+         <button name="login" type="snd" id="loginSubmit"  >Send</button>
+         </form> -->
+
           </div>
         </div>
       </div>

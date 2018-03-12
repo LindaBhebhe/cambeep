@@ -38,24 +38,21 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item active px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="index.html">Home
+              <a class="nav-link text-uppercase text-expanded" href="generalHome.php">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="stationery.html">Request Stationery</a>
+              <a class="nav-link text-uppercase text-expanded" href="requestStationery.php">Request Stationery</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="ITequipment.html">Request IT Equipment</a>
+              <a class="nav-link text-uppercase text-expanded" href="requestEquipment.php">Request IT Equipment</a>
             </li>
              <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="stationeryRequests.php">Stationery Requests</a>
+              <a class="nav-link text-uppercase text-expanded" href="requestSupport.php">Request IT Support</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="some page">System check</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="login.html">Logout</a>
+              <a class="nav-link text-uppercase text-expanded" href="logout.php">Logout</a>
             </li>
           </ul>
         </div>

@@ -31,10 +31,10 @@
 
     
     <section class="page-section cta">
-      <div class="container">
+      <div class="container" style="padding-right: 0px; padding-left: 0px;">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-          <!-- <table cellspacing="0" cellpadding="0" border="1" style="width:100%; ">
+          <!-- <table cellspacing="0" cellpadding="0" border="1" style="width:100%;>
         <tr>
             <td>
                 <div style=" height:600px; overflow:auto;">

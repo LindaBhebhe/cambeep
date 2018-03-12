@@ -2,8 +2,6 @@
 header("Access-Control-Allow-Origin: *");
 
 
-
-
 //CONNECTING TO THE DATABASE
 function getdb(){
 $servername = "localhost";
@@ -25,6 +23,19 @@ catch(exception $e)
     return $conn;
 }
 
+ function loadEquipment($item) {
+  echo "in the load equipment function";
+    $con= getdb();
+    $Sql ="Select item_id, item_name,specs from equipment where item_name = '$item'";
+    $result = mysqli_query($con, $Sql); 
+
+
+    if (mysqli_num_rows($result)>0 ) {
+       while($row = mysqli_fetch_assoc($result)){  
+            echo "<option value=".$row['specs']. "></option>";
+        }
+    }
+}
 
 
 // Function to get the IT support reports 
@@ -61,7 +72,7 @@ function get_all_reports(){
               ?>
 
               <form name="view" method="GET" action = "viewedUpdate.php">
-               <button name="done" type="submit" id="doneBtn" onclick="cancelRequest()" >Done</button> 
+               <button name="done" type="submit" id="doneBtn" onclick="done()">Done</button> 
                </form>
 
                <?php  
@@ -151,6 +162,12 @@ mysqli_close($con);
      echo "you have no records";
 }
 }
+
+function done(){
+
+
+}
+
 
 
 

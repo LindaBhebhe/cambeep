@@ -23,6 +23,9 @@
   </head>
 
   <body>
+   <?php
+      require_once('../model/getEquipment.php');                  
+    ?>
 
     <script type="text/javascript" src="../Controller/controlScript.js"></script>  
 
@@ -40,21 +43,21 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item active px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="index.html">Home
+              <a class="nav-link text-uppercase text-expanded" href="generalHome.php">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="stationery.html">Request Stationery</a>
+              <a class="nav-link text-uppercase text-expanded" href="requestStationery.php">Request Stationery</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="ITequipment.html">Request IT Equipment</a>
+              <a class="nav-link text-uppercase text-expanded" href="requestEquipment.php">Request IT Equipment</a>
             </li>
              <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="ITsupport.html">Request IT Support</a>
+              <a class="nav-link text-uppercase text-expanded" href="requestSupport.php">Request IT Support</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="index.html">Logout</a>
+              <a class="nav-link text-uppercase text-expanded" href="logout.php">Logout</a>
             </li>
           </ul>
         </div>
@@ -73,29 +76,19 @@
                 <span class="section-heading-upper">Contact IT for support</span>
                 </h2>
 
-               <form id="login" action="" method="post">      
+               <form id="support"  method="post" action="">      
               <fieldset> 
                  
                 Enter your message: <br> 
                 <span style="color:red" class="error" id="message_error"> 
-                <textarea rows="4" cols="50"  name="msg" id="message" placeholder="Enter your message " required> 
+                <textarea rows="4" cols="50"  name="message" id="message" placeholder="Enter your message " required> 
 
                  </textarea>
               </fieldset>
               <br>
 
-              
-
-              <!-- <fieldset>
-               Request by: <br>
-                 <span style="color:red" class="error" id="request_error">  
-                <input  name="requester" id="requestBy" type="text" tabindex="2"  required>
-                
-              </fieldset>
-              <br> -->
 
               <fieldset>
-             
                How urgent?: <br>
                   <span style="color:red" class="error" id="status_error">  
                 <select name="status" id="status" placeholder="select "  tabindex="2"  required>
