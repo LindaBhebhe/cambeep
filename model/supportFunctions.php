@@ -1,6 +1,6 @@
 <script type="text/javascript" src="../Controller/controlScript.js"></script> 
 <?php
-header("Access-Control-Allow-Origin: *");
+//header("Access-Control-Allow-Origin: *");
  
 
 //CONNECTING TO THE DATABASE
@@ -14,7 +14,7 @@ $db = "cambeep";
 try {
   
     $conn = mysqli_connect($servername, $username, $password, $db);
-    // echo "Connected successfully"; 
+  
     }
 
 catch(exception $e)
@@ -66,7 +66,7 @@ function get_all_requests(){
            $row_id = 0; 
       while($row = mysqli_fetch_assoc($result)){ 
          $row_id =  $row_id+1;
-       echo "<tr id= $row_id >
+       echo "<tr id= '$row_id'>
              <td>" . $row['date'] .
              "</td><td>" . $row['sender'] .
              "</td><td>" . $row['message'] .
@@ -74,9 +74,9 @@ function get_all_requests(){
               "</td><td>" . $row['state']. 
               "</td>
               <td>";
-        echo'
-              <form name="view" method="GET" action = "clearTable.php">
-               <button name="done" type="submit" id="$row_id" onclick="removeRow(id)">Done</button> 
+          echo'
+              <form name="view" method="GET" action = "">
+               <button name="done" type="submit" id= $row_id onclick="removeRow('.$row_id.')">Done</button> 
                </form>';
 
               ?>
@@ -105,20 +105,12 @@ mysqli_close($con);
 }
 }
 
-/*function done($id){
-  echo("in the done function");
-  var hide_row = document.getElementById($id).style;
-      result_style.display = '';
-  <tr id=$id style="display: none;">
-
-}*/
-
 
 // Function to view all the stationery requests
 function get_all_stationery_requests(){
   
     $con = getdb();
-    $Sql = "SELECT * FROM stationery_requests";
+    $Sql = "SELECT * FROM stationery_out";
     $result = mysqli_query($con, $Sql);  
 
    
@@ -129,26 +121,20 @@ function get_all_stationery_requests(){
                          <thead>
                           <th>Date</th>
                           <th>By</th>
-                          <th>Approver</th>
-                          <th>Approved</th>
-                          <th>Item</th>
-                          <th>Description</th>
-                          <th>N#</th>
+                          <th>Quantity</th>
+                          <th>Collection_by</th>
                           <th>Rem</th>
                           <th>Clear</th>
                         </tr></thead><tbody>";
     
  
            echo "<tbody>";  
-          while($row = mysqli_fetch_assoc($result)){   
+            while($row = mysqli_fetch_assoc($result)){   
         echo "<tr>
-                   <td>" . $row['date'] .
-              "</td><td>" . $row['requester'] .
-              "</td><td>" . $row['approver'] .
-              "</td><td>" . $row['approved'] .
-              "</td><td>" . $row['item'] .
-              "</td><td>" . $row['description'] .
+                   <td>" . $row['request_date'] .
+              "</td><td>" . $row['request_by'] .
               "</td><td>" . $row['quantity'] .
+              "</td><td>" . $row['collection_by'] .
               "</td>
               <td>"
               ?>

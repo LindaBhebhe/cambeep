@@ -1,11 +1,32 @@
 
+
+
+
 function removeRow($id){
  alert("in the clear function");
  alert($id);
-  //var hide_row = document.getElementById(1).style;
-   //hide_row.display = '';
+ if (window.XMLHttpRequest) {
+				xhttp = new XMLHttpRequest();
+				} else {
+			
+				xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xhttp.onreadystatechange = function() {
+                 console.log("in the on readyState");
+				if (this.readyState == 4 && this.status == 200) {				
+					if (this.responseText == "successful"){
+						alert("updated");
+                      
+                     }
+                    
+                }
+        };
+          	  
+		  xhttp.open("GET", "1, true);		  
+		  xhttp.send();
+		}
+  
 
-}
 
 
 //*****************************login**************************
@@ -67,18 +88,17 @@ function loginAsUser(){
 				xhttp = new ActiveXObject("Microsoft.XMLHTTP");
 			}
 			xhttp.onreadystatechange = function() {
-                 console.log("in the on readyState");
 				if (this.readyState == 4 && this.status == 200) {
-				  //direct based on who logged in 					
+				  alert(this.readyState);				
 					if (this.responseText == "successful1"){
-                        window.location.href = "ITadminHome.html";
+                        window.location.href = "ITadminHome.php";
                      }
                      else if(this.responseText == "successful2") {
                      	//alert("in the else statement");
-                     	window.location.href = "home.html";
+                     	window.location.href = "generalHome.php";
                      }
                       else if(this.responseText == "successful3") {
-                     	window.location.href = "adminHome.html";
+                     	window.location.href = "adminHome.php";
                      }
 
                 }
@@ -184,7 +204,7 @@ function requestSupport(){
 
 //************************************Request Equipment*********************************************************
 function validateEquipmentForm(){
-	alert("in the validateEquipment form");
+	alert("successfully requested");
 	//console.log("in the validate method");
 
 	//get username input and error message 
@@ -277,7 +297,7 @@ function requestEquipment(){
 //*******************************************Stationery*************************************************************
 
 	function validateStationeryForm(){
-	alert("in the validateStationery form");
+	
 	//console.log("in the validate method");
 
 	//get username input and error message 
@@ -314,6 +334,7 @@ function requestEquipment(){
 
 
 function requestStationery(){
+	alert("successfully requested");
     var item = document.getElementById('item');
 
 	var quantity = document.getElementById('quantity');	

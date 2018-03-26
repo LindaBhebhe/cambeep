@@ -52,7 +52,7 @@
                     <th>Respond</th>
                     </tr>
                     </thead> -->
-                <?php
+                  <?php
                     Require('../model/supportFunctions.php');
                        get_all_requests();
                     
